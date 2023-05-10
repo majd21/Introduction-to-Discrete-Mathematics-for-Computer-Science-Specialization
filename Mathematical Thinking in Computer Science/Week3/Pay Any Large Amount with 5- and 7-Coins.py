@@ -1,27 +1,13 @@
-print("Enter Maximum number of Integer given in question: ",end=' ')
-h=int(input())
-print("Enter number of times you can ask: ",end=' ')
-n=int(input())
-if h%2 != 0:
-  h=h+1
-mid=h/2
-j=h/2
-print("\nGuide:\nEnter 1 for largest and 0 for smallest :-)\n")
-print("Ask:",mid)
-for i in range(1,n):
-	j=j/2
-	
-	print("1 or 0 : ",end=' ')
-	usr=input()
-	
-	if usr=='1':
-	  mid=mid+j
-	elif usr=='0':
-	  mid=mid-j
-	else:
-	  print("Input error!!\n")
-	  exit()
-	print("Ask:",mid)
-print("Congratulation!!!")
+def change(amount):
+  if amount == 24:
+    return [5, 5, 7, 7]
+  if amount % 5 == 0:
+    return [5] * (amount//5)
+  if amount % 7 == 0:
+    return [7] * (amount//7)
+
+  coins = change(amount-5)
+  coins.append(5)
+  return coins
 
 
